@@ -6,7 +6,7 @@ import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
 import format from 'date-fns/format'
 import deLocale from 'date-fns/locale/de'
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 
 export const BlogPostTemplate = ({

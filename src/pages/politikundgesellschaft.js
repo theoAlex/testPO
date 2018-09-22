@@ -3,7 +3,7 @@ import { withPrefix } from  'gatsby-link'
 import { graphql } from "gatsby"
 import format from 'date-fns/format'
 import deLocale from 'date-fns/locale/de'
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import { kebabCase } from 'lodash'
 
 

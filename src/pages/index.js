@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 // import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 // import { withPrefix } from  'gatsby-link'
 
 import AFDLogo from '../img/AFD.png'
