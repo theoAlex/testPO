@@ -1,0 +1,218 @@
+// @import "~bulma/sass/utilities/initial-variables"
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Gamja+Flower|Rubik|Ubuntu|Poppins|Source+Sans+Pro|Merriweather|Titillium+Web|Montserrat|Lato')
+
+
+
+@fontface 
+  font-family: SegoeUI
+  src: url(../fonts/MyriadPro-BlackSemiCn.otf)
+
+// Config vars
+$kaldi-red: #FD461E
+$kaldi-red-invert: #fff
+
+$primary: $kaldi-red
+$primary-invert: $kaldi-red-invert
+
+$orange: #ff4400
+
+.content .taglist
+  list-style: none
+  margin-bottom: 0
+  margin-left: 0
+  margin-right: 1.5rem
+  margin-top: 1.5rem
+  display: flex
+  flex-wrap: wrap
+  justify-content: left
+  align-items: center
+  li
+    padding: 0 2rem 1rem 0
+    margin-bottom: 1.5rem
+    margin-top: 0
+
+// Helper Classes
+.full-width-image-container
+  width: 100vw
+  height: 400px
+  position: relative
+  left: 50%
+  right: 50%
+  margin: 5em -50vw
+  background-size: cover
+  background-position: bottom
+  display: flex
+  justify-content: center
+  align-items: center
+
+.margin-top-0
+  margin-top: 0 !important
+
+@import "~bulma"
+
+.bg 
+  z-index: -1;
+
+html
+  scroll-behavior: smooth
+  overflow: hidden
+
+body
+  overflow:
+
+.wrapper
+  scroll-behavior: smooth
+  overflow-y: scroll
+  overflow-x: hidden
+  height: 100vh
+  display: grid
+  grid-template-rows: 56px auto 400px
+  minHeight: 100vh
+    
+.navbar
+  font-family: 'Poppins'
+  font-weight: 500
+  font-size: 1.1rem
+
+.nav
+  display: flex
+  align-items: center
+  flex-grow: 0
+  flex-shrink: 0
+  line-height: 1.5
+  padding: 0.5rem 1.42rem
+  position: relative
+  color: #aaa
+  transition: all 0.01s
+  &:hover
+    color: #ddd
+
+.ueberUns .body p
+  margin-bottom: 30px
+
+.contact-heading
+  font-family: 'Source Sans Pro'
+  font-weight: '300'
+ 
+footer
+  font-family: 'Poppins'
+  color: #ddd
+  a
+    color: #aaa
+    &:hover
+      color: #ddd
+
+.post-content
+  img:first-of-type
+    width: 100%
+    height: 450px
+    object-fit: cover
+  p:not(:first-of-type), h2, ul, ol
+    width: 60%
+    margin: 40px auto 0 auto
+    font-size: 1.3em
+  p:first-of-type
+    margin-top: 15px 
+   
+
+
+
+.PUG-article-list
+  > div:not(:last-of-type)
+    border-bottom: 1px solid #eaecee
+
+.article-link
+  border: 1px solid #dbdbdb
+  width: 128px
+  height: 35px
+  padding: 5px 11px
+  font-size: 0.93rem
+  color: #363636
+  cursor: pointer
+  border-radius: 2px
+  &:hover
+    border-color: #b5b5b5
+  &:focus
+    border-color: #3273dc
+    box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+  
+.partei-wahl-btns-svg > a
+  cursor: pointer
+
+#AFD
+  fill: #0192ffa6 //  #1880cebb
+#FDP
+  fill: #ffcf00a3
+#CSU
+  fill: #000000bb
+#CDU
+  fill: #000000bb
+#Gruene
+  fill: #16cc2bba
+#SPD
+  fill: #f20000bf
+#Linke
+  fill: #e2008ab3
+.AFD-btn
+  fill: #0192ff
+  stroke: #155aff99
+  stroke-width: 0.4px
+  fill-opacity: .4
+.FDP-btn
+  fill: #ffcf00
+  stroke: #927b00bb
+  stroke-width: 0.4px
+  fill-opacity: .4
+.CDU-btn, .CSU-btn
+  fill: #060606
+  stroke: #00000055
+  stroke-width: 0.4px
+  fill-opacity: .4
+.GRUENEN-btn
+  fill: #16cc2b
+  stroke: #167d2bbb
+  stroke-width: 0.4px
+  fill-opacity: .4
+.SPD-btn
+  fill: #f20000
+  stroke: #ab000088
+  stroke-width: 0.4px
+  fill-opacity: .4
+.LINKE-btn
+  fill: #e2008a
+  stroke: #9a008abb
+  stroke-width: 0.4px
+  fill-opacity: .4
+
+
+#AFDTEST
+  fill: white
+  stroke: white
+  stroke-width: 0.5px
+  fill-opacity: .639216
+#FDPTEST
+  fill: white
+  stroke: white
+  stroke-width: 0.5px
+  fill-opacity: .623529
+#CSUTEST, #CDUTEST
+  fill: white
+  stroke: white
+  stroke-width: 0.5px
+  fill-opacity: .729412
+#GRUENETEST
+  fill: white
+  stroke: white
+  stroke-width: 0.5px
+  fill-opacity: .729412
+#SPDTEST
+  fill: white
+  stroke: white
+  stroke-width: 0.5px
+  fill-opacity: .74902
+#LINKETEST
+  fill: white
+  stroke: white
+  stroke-width: 0.5px
+  fill-opacity: .701961

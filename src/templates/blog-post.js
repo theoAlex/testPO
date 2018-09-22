@@ -2,9 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
+import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
+import format from 'date-fns/format'
+import deLocale from 'date-fns/locale/de'
+import Layout from "../components/layout"
+
 
 export const BlogPostTemplate = ({
   content,
@@ -13,41 +16,48 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  date,
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
-      {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+    <Layout>
+      <section className="section">
+        {helmet || ''}
+        <div style={{ width: '1200px', margin: '0 auto' }}>
+          <h1 style={{ fontSize: '2.3em', fontWeight: 'normal', fontFamily: 'Merriweather', width: 'auto', textAlign: 'center', marginBottom: '20px' }}>
+            {title}
+          </h1>
+          <hr style={{ width: '50%', margin: '0px auto 30px auto' }}/>
+          <div style={{ color: '#888', fontFamily: 'Source Sans Pro', display: 'grid', gridTemplateColumns: '50% 50%', width: '60%', margin: '0 auto' }}>
+            <span style={{ alignSelf: 'center', fontSize: '1.1em' }}>
+              {format(date, 'D[.] MMMM YYYY', {locale: deLocale})}
+            </span>
+            <div style={{ marginBottom: '10px',  justifySelf: 'end' }}>      
+            {tags.map(tag => (
+              <Link 
+                style={{ 
+                  background: '#0000000d', 
+                  color: '#000000ad', 
+                  padding: '5px 10px',
+                  margin: '0 10px',
+                  borderRadius: '2px' }} 
+                to={`/tags/${kebabCase(tag)}`}
+              >
+              {tag}
+              </Link>
+            ))}
+            </div>
           </div>
+          <PostContent content={content} className="post-content" />
         </div>
-      </div>
-    </section>
+      </section>
+    </Layout>
   )
 }
 
 BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
+  content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
@@ -58,16 +68,15 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
-      <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
-      />
-    </Layout>
+    <BlogPostTemplate
+      content={post.html}
+      contentComponent={HTMLContent}
+      description={post.frontmatter.description}
+      helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
+      tags={post.frontmatter.tags}
+      title={post.frontmatter.title}
+      date={post.frontmatter.date}
+    />
   )
 }
 
