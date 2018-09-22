@@ -19,3 +19,4 @@ BlogPostPreview.propTypes = {
 }
 
 export default BlogPostPreview
+
